@@ -2,17 +2,18 @@ import Head from 'next/head';
 import Image from 'next/image';
 import homeStyles from '../styles/Home.module.css';
 import React, { useState } from 'react';
+import List from '../components/list';
+
+interface IState {
+  people: {
+    name: string;
+    age: number;
+    url?: string;
+    note?: string;
+  }[];
+}
 
 export default function Home() {
-  interface IState {
-    people: {
-      name: string;
-      age: number;
-      url?: string;
-      note?: string;
-    }[];
-  }
-
   const [people, setPeople] = useState<IState['people']>([]);
 
   return (
@@ -30,7 +31,8 @@ export default function Home() {
           </a>{' '}
           Planner
         </h1>
-        <ul className='my-10 space-y-5'>
+        <List people={people} />
+        {/* <ul className='my-10 space-y-5'>
           <li className='text-3xl'>
             Update homepage at{' '}
             <code className={homeStyles.code}>pages/index.js</code>
@@ -42,7 +44,7 @@ export default function Home() {
             Add redux slices to{' '}
             <code className={homeStyles.code}>features/...</code>
           </li>
-        </ul>
+        </ul> */}
         {/* <p className='my-10'>
         </p> */}
       </main>
