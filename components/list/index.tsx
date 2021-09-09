@@ -16,7 +16,7 @@ const List: React.FC<IProps> = ({ people }) => {
     });
   };
 
-  return <div className='my-20 flex'>{renderCards()}</div>;
+  return <div className='my-20 flex flex-wrap'>{renderCards()}</div>;
 };
 
 export default List;
