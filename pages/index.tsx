@@ -9,12 +9,26 @@ interface IState {
     name: string;
     age: number;
     url?: string;
-    note?: string;
+    quote?: string;
   }[];
 }
 
 export default function Home() {
-  const [people, setPeople] = useState<IState['people']>([]);
+  const [people, setPeople] = useState<IState['people']>([
+    {
+      name: 'James Franco',
+      url: 'https://3.bp.blogspot.com/-jarLeLW69Fk/Us3wGo3eIYI/AAAAAAAAQ4o/uY9HzM6H1W8/s1600/reg_1024.ThisistheEnd.JamesFranco.122012.jpg',
+      age: 35,
+      quote: ' Cool it, Dumbledore!',
+    },
+    {
+      name: 'Danny McBride',
+      url: 'https://cdn3.whatculture.com/images/2020/07/07ac2202ae8bf856-600x338.jpg',
+      age: 36,
+      quote:
+        "You're making me into a joke right now Franco, and you are not gonna like the fucking punchline.",
+    },
+  ]);
 
   return (
     <div className='w-screen h-screen flex justify-center items-center'>
@@ -24,7 +38,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className='text-center p-24'>
+      <main className='text-center p-24 min-h-screen min-w-full'>
         <h1 className='text-8xl font-bold'>
           <a href='https://nextjs.org' className='text-purple-500'>
             Party
