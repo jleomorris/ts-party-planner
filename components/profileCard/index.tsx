@@ -24,8 +24,8 @@ const ProfileCard: React.FC<IProps> = ({ person }) => {
           <p className='text-sm leading-tight text-gray-600'>
             Age: {person.age}
           </p>
-          <p className='text-sm leading-tight text-gray-600 italic my-3'>
-            {person.quote}
+          <p className='text-sm leading-tight text-gray-600 italic my-3 font-semibold'>
+            {`"${person.quote}"`}
           </p>
           <div className='mt-4'>
             <button className='text-purple-500 hover:text-white hover:bg-purple-500 border border-purple-500 text-xs font-semibold rounded-full px-4 py-1 leading-normal'>
