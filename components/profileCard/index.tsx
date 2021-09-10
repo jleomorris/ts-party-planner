@@ -17,7 +17,7 @@ const ProfileCard: React.FC<IProps> = ({ person }) => {
         <img
           className='block mx-auto sm:mx-0 sm:flex-shrink-0 h-20 w-20 sm:h-24 sm:w-24 object-cover rounded-full'
           src={person.url}
-          alt="Woman's Face"
+          alt='card image'
         />
         <div className='mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left'>
           <p className='text-xl leading-tight font-bold'>{person.name}</p>

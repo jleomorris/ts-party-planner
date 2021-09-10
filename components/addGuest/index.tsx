@@ -9,7 +9,7 @@ interface IProps {
 interface IState {
   guest: {
     name: string;
-    age: number;
+    age?: number;
     url?: string;
     quote?: string;
   };
@@ -18,7 +18,7 @@ interface IState {
 const AddGuest: React.FC<IProps> = ({ people, setPeople }) => {
   const [input, setInput] = useState<IState['guest']>({
     name: '',
-    age: 0,
+    age: undefined,
     url: '',
     quote: '',
   });
@@ -42,7 +42,7 @@ const AddGuest: React.FC<IProps> = ({ people, setPeople }) => {
       <input
         type='text'
         placeholder='Name'
-        className='w-full shadow-inner m-3 p-3 rounded-md'
+        className='shadow-inner m-3 p-3 rounded-md'
         value={input.name}
         onChange={changeHandler}
         name='name'
@@ -50,7 +50,7 @@ const AddGuest: React.FC<IProps> = ({ people, setPeople }) => {
       <input
         type='number'
         placeholder='Age'
-        className='w-full shadow-inner m-3 p-3 rounded-md'
+        className='shadow-inner m-3 p-3 rounded-md'
         value={input.age}
         onChange={changeHandler}
         name='age'
@@ -58,20 +58,20 @@ const AddGuest: React.FC<IProps> = ({ people, setPeople }) => {
       <input
         type='text'
         placeholder='Image URL'
-        className='w-full shadow-inner m-3 p-3 rounded-md'
+        className='shadow-inner m-3 p-3 rounded-md'
         value={input.url}
         onChange={changeHandler}
         name='url'
       />
       <textarea
         placeholder='Quote'
-        className='w-full shadow-inner m-3 p-3 rounded-md h-28'
+        className='shadow-inner m-3 p-3 rounded-md h-28'
         value={input.quote}
         onChange={changeHandler}
         name='quote'
       />
       <button
-        className='bg-purple-200 hover:bg-purple-300 w-full rounded-md shadow-md m-3 p-3'
+        className='bg-purple-200 hover:bg-purple-300 rounded-md shadow-md m-3 p-3'
         onClick={clickHandler}
       >
         Add to list

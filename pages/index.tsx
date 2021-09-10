@@ -40,14 +40,17 @@ export default function Home() {
       </Head>
 
       <main className='text-center p-24 min-h-screen min-w-full'>
-        <h1 className='text-8xl font-bold'>
-          <a href='https://nextjs.org' className='text-purple-500'>
-            Party
-          </a>{' '}
-          Planner
+        <h1 className='text-8xl font-bold '>
+          <span className='text-purple-500'>Party</span> Planner
         </h1>
-        <List people={people} />
-        <AddGuest people={people} setPeople={setPeople} />
+        <div className='my-20 flex flex-col xl:flex-row flex-wrap rounded-xl overflow-hidden'>
+          <div className='xl:w-2/3 bg-gray-100'>
+            <List people={people} />
+          </div>
+          <div className='xl:w-1/3 py-10 bg-gray-300 flex items-center'>
+            <AddGuest people={people} setPeople={setPeople} />
+          </div>
+        </div>
       </main>
     </div>
   );
