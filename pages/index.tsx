@@ -3,8 +3,9 @@ import Image from 'next/image';
 import homeStyles from '../styles/Home.module.css';
 import React, { useState } from 'react';
 import List from '../components/list';
+import AddGuest from '../components/addGuest';
 
-interface IState {
+export interface IState {
   people: {
     name: string;
     age: number;
@@ -19,7 +20,7 @@ export default function Home() {
       name: 'James Franco',
       url: 'https://3.bp.blogspot.com/-jarLeLW69Fk/Us3wGo3eIYI/AAAAAAAAQ4o/uY9HzM6H1W8/s1600/reg_1024.ThisistheEnd.JamesFranco.122012.jpg',
       age: 35,
-      quote: ' Cool it, Dumbledore!',
+      quote: 'Cool it, Dumbledore!',
     },
     {
       name: 'Danny McBride',
@@ -46,21 +47,7 @@ export default function Home() {
           Planner
         </h1>
         <List people={people} />
-        {/* <ul className='my-10 space-y-5'>
-          <li className='text-3xl'>
-            Update homepage at{' '}
-            <code className={homeStyles.code}>pages/index.js</code>
-          </li>
-          <li className='text-3xl'>
-            Add pages to <code className={homeStyles.code}>pages/...</code>
-          </li>
-          <li className='text-3xl'>
-            Add redux slices to{' '}
-            <code className={homeStyles.code}>features/...</code>
-          </li>
-        </ul> */}
-        {/* <p className='my-10'>
-        </p> */}
+        <AddGuest people={people} setPeople={setPeople} />
       </main>
     </div>
   );

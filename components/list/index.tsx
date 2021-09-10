@@ -1,13 +1,5 @@
 import ProfileCard from '../profileCard';
-
-interface IProps {
-  people: {
-    name: string;
-    age: number;
-    url?: string;
-    quote?: string;
-  }[];
-}
+import { IState as IProps } from '../../pages/index';
 
 const List: React.FC<IProps> = ({ people }) => {
   const renderCards = (): JSX.Element[] => {
