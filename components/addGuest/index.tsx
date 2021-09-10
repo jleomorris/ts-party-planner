@@ -9,7 +9,7 @@ interface IProps {
 interface IState {
   guest: {
     name: string;
-    age?: number;
+    age: number;
     url?: string;
     quote?: string;
   };
@@ -18,7 +18,7 @@ interface IState {
 const AddGuest: React.FC<IProps> = ({ people, setPeople }) => {
   const [input, setInput] = useState<IState['guest']>({
     name: '',
-    age: undefined,
+    age: 0,
     url: '',
     quote: '',
   });

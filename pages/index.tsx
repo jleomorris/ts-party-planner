@@ -29,6 +29,12 @@ export default function Home() {
       quote:
         "You're making me into a joke right now Franco, and you are not gonna like the fucking punchline.",
     },
+    {
+      name: 'Craig Robinson',
+      url: 'http://dailygrindhouse.com/wp-content/uploads/2013/06/Craig-Robinson.jpg',
+      age: 41,
+      quote: 'Take your panties off!',
+    },
   ]);
 
   return (
@@ -44,8 +50,8 @@ export default function Home() {
           <span className='text-purple-500'>Party</span> Planner
         </h1>
         <div className='my-20 flex flex-col xl:flex-row flex-wrap rounded-xl overflow-hidden'>
-          <div className='xl:w-2/3 bg-gray-100'>
-            <List people={people} />
+          <div className='p-10 xl:w-2/3 bg-gray-100'>
+            <List people={people} setPeople={setPeople} />
           </div>
           <div className='xl:w-1/3 py-10 bg-gray-300 flex items-center'>
             <AddGuest people={people} setPeople={setPeople} />
