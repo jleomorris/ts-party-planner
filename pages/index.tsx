@@ -4,6 +4,7 @@ import homeStyles from '../styles/Home.module.css';
 import React, { useState } from 'react';
 import List from '../components/list';
 import AddGuest from '../components/addGuest';
+import { guestData } from '../guestData';
 
 export interface IState {
   people: {
@@ -14,28 +15,8 @@ export interface IState {
   }[];
 }
 
-export default function Home() {
-  const [people, setPeople] = useState<IState['people']>([
-    {
-      name: 'James Franco',
-      url: 'https://3.bp.blogspot.com/-jarLeLW69Fk/Us3wGo3eIYI/AAAAAAAAQ4o/uY9HzM6H1W8/s1600/reg_1024.ThisistheEnd.JamesFranco.122012.jpg',
-      age: 35,
-      quote: 'Cool it, Dumbledore!',
-    },
-    {
-      name: 'Danny McBride',
-      url: 'https://cdn3.whatculture.com/images/2020/07/07ac2202ae8bf856-600x338.jpg',
-      age: 36,
-      quote:
-        "You're making me into a joke right now Franco, and you are not gonna like the fucking punchline.",
-    },
-    {
-      name: 'Craig Robinson',
-      url: 'http://dailygrindhouse.com/wp-content/uploads/2013/06/Craig-Robinson.jpg',
-      age: 41,
-      quote: 'Take your panties off!',
-    },
-  ]);
+export default function Home({ guests }) {
+  const [people, setPeople] = useState<IState['people']>(guests);
 
   return (
     <div className='w-screen h-screen flex justify-center items-center'>
@@ -60,4 +41,14 @@ export default function Home() {
       </main>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const guests = guestData;
+
+  return {
+    props: {
+      guests,
+    },
+  };
 }
