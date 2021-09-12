@@ -15,7 +15,16 @@ export interface IState {
   }[];
 }
 
-export default function Home({ guests }) {
+export interface IProps {
+  guests: {
+    name: string;
+    age: number;
+    url?: string;
+    quote?: string;
+  }[];
+}
+
+const Home: React.FC<IProps> = ({ guests }) => {
   const [people, setPeople] = useState<IState['people']>(guests);
 
   return (
@@ -41,7 +50,7 @@ export default function Home({ guests }) {
       </main>
     </div>
   );
-}
+};
 
 export async function getStaticProps() {
   const guests = guestData;
@@ -52,3 +61,5 @@ export async function getStaticProps() {
     },
   };
 }
+
+export default Home;
